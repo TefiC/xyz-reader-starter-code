@@ -16,8 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -31,6 +29,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -114,10 +114,18 @@ public class ArticleListActivity extends ActionBarActivity implements
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         Adapter adapter = new Adapter(cursor);
         adapter.setHasStableIds(true);
+
+
+
         mRecyclerView.setAdapter(adapter);
         int columnCount = getResources().getInteger(R.integer.list_column_count);
         StaggeredGridLayoutManager sglm =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
+
+        // TODO: ADD DIVIDER
+        DividerItemDecoration itemDecor = new DividerItemDecoration(this, getDrawable(R.drawable.list_divider), VERTICAL);
+        mRecyclerView.addItemDecoration(itemDecor);
+
         mRecyclerView.setLayoutManager(sglm);
     }
 

@@ -17,7 +17,7 @@
     <!--suppress AndroidLintContentDescription -->
     <com.example.xyzreader.ui.DynamicHeightNetworkImageView
         android:id="@+id/thumbnail"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="0dp"
         android:background="@color/photo_placeholder"
         android:layout_gravity="center"
@@ -40,7 +40,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:textColor="@color/articlesTextColor"/>
+            android:textColor="@color/articlesTextColor" />
 
         <TextView
             android:id="@+id/article_subtitle"
