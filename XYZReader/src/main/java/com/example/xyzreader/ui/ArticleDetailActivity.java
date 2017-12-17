@@ -116,6 +116,7 @@ public class ArticleDetailActivity extends ActionBarActivity
 
     // TODO: TRANSITION
     private void setupWindowAnimations() {
+        postponeEnterTransition();
         Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.activity_fade);
         getWindow().setEnterTransition(fade);
         getWindow().setReturnTransition(fade);

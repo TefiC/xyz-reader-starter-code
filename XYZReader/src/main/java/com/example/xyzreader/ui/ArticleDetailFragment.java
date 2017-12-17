@@ -33,6 +33,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import static android.R.attr.start;
+
 /**
  * A fragment representing a single Article detail screen. This fragment is
  * either contained in a {@link ArticleListActivity} in two-pane mode (on
@@ -160,8 +162,6 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
-        bindViews();
-
         updateStatusBar();
 
         return mRootView;
@@ -260,6 +260,9 @@ public class ArticleDetailFragment extends Fragment implements
                                         .setBackgroundColor(mMutedColor);
 
                                 updateStatusBar();
+
+                                // TODO: TRANSITION
+                                startPostponedEnterTransition();
                             }
                         }
 
@@ -289,9 +292,6 @@ public class ArticleDetailFragment extends Fragment implements
             }
             return;
         }
-
-        // TODO: TRANSITION
-        getActivity().startPostponedEnterTransition();
 
         mCursor = cursor;
         if (mCursor != null && !mCursor.moveToFirst()) {
