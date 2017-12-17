@@ -290,6 +290,9 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
+        // TODO: TRANSITION
+        getActivity().startPostponedEnterTransition();
+
         mCursor = cursor;
         if (mCursor != null && !mCursor.moveToFirst()) {
             Log.e(TAG, "Error reading item detail cursor");
