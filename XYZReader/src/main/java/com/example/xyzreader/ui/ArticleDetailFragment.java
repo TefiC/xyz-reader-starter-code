@@ -11,6 +11,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
@@ -32,8 +33,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
-import static android.R.attr.start;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -264,7 +263,7 @@ public class ArticleDetailFragment extends Fragment implements
                                 updateStatusBar();
 
                                 // TODO: TRANSITION
-                                getActivity().startPostponedEnterTransition();
+                                ActivityCompat.startPostponedEnterTransition(getActivity());
                             }
                         }
 
