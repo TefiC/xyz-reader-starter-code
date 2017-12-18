@@ -264,7 +264,7 @@ public class ArticleDetailFragment extends Fragment implements
                                 updateStatusBar();
 
                                 // TODO: TRANSITION
-                                startPostponedEnterTransition();
+                                getActivity().startPostponedEnterTransition();
                             }
                         }
 
