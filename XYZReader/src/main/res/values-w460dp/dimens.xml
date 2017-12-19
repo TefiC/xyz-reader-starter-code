@@ -3,6 +3,7 @@
 
     <!--Floating action button-->
     <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_padding">16dp</dimen>
 
 
 </resources>

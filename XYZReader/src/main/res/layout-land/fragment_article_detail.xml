@@ -52,58 +52,58 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:id="@+id/meta_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
+                    android:background="#333"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
+                    android:paddingLeft="@dimen/detail_inner_land_horiz_margin"
+                    android:paddingRight="@dimen/detail_inner_land_horiz_margin"
+                    android:paddingTop="@dimen/detail_metabar_vert_padding">
+
+                    <TextView
+                        android:id="@+id/article_title"
+                        style="?android:attr/textAppearanceLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:lineSpacingMultiplier="0.9"
+                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+                        android:paddingTop="@dimen/detail_metabar_title_top_padding"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/detail_title_text_size"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        tools:text="Title"/>
+
+                    <TextView
+                        android:id="@+id/article_byline"
+                        style="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8fff"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
                 <com.example.xyzreader.ui.MaxWidthLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="#fff"
-                    android:elevation="2dp"
                     android:maxWidth="@dimen/detail_card_max_width"
                     android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/meta_bar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
-                        android:background="#333"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:textAlignment="center"
-                        android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                        android:paddingLeft="@dimen/detail_inner_land_horiz_margin"
-                        android:paddingRight="@dimen/detail_inner_land_horiz_margin"
-                        android:paddingTop="@dimen/detail_metabar_vert_padding">
-
-                        <TextView
-                            android:id="@+id/article_title"
-                            style="?android:attr/textAppearanceLarge"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-condensed"
-                            android:lineSpacingMultiplier="0.9"
-                            android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                            android:paddingTop="@dimen/detail_metabar_title_top_padding"
-                            android:textColor="#fff"
-                            android:textSize="@dimen/detail_title_text_size"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:gravity="center"
-                            tools:text="Title"/>
-
-                        <TextView
-                            android:id="@+id/article_byline"
-                            style="?android:attr/textAppearanceMedium"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8fff"
-                            android:textAlignment="center"/>
-                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/article_body"
                         style="?android:attr/textAppearanceMedium"
+                        android:fontFamily="sans-serif-condensed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="25dp"
@@ -129,7 +129,6 @@
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:background="@drawable/add_fab_background"
-        android:backgroundTint="@color/colorAccent"
         android:contentDescription="@string/action_share"
         android:elevation="@dimen/fab_elevation"
         android:src="@drawable/ic_share"

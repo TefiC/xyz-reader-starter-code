@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.util.TypedValue;
@@ -26,7 +26,7 @@ import com.example.xyzreader.data.ItemsContract;
 /**
  * An activity representing a single Article detail screen, letting you swipe between articles.
  */
-public class ArticleDetailActivity extends ActionBarActivity
+public class ArticleDetailActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private Cursor mCursor;
@@ -50,7 +50,6 @@ public class ArticleDetailActivity extends ActionBarActivity
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                             View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
-            // TODO: TRANSITION
             setupWindowAnimations();
         }
         setContentView(R.layout.activity_article_detail);
@@ -111,10 +110,17 @@ public class ArticleDetailActivity extends ActionBarActivity
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
                 mSelectedItemId = mStartId;
             }
+        } else if (savedInstanceState.containsKey("selectedItemId")) {
+            mSelectedItemId = savedInstanceState.getLong("selectedItemId");
         }
     }
 
-    // TODO: TRANSITION
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putLong("selectedItemId", mSelectedItemId);
+    }
+
     private void setupWindowAnimations() {
         ActivityCompat.postponeEnterTransition(this);
         Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.activity_fade);

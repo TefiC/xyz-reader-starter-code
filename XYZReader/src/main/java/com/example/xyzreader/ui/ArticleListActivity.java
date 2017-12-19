@@ -65,7 +65,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_article_list);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // TODO: TRANSITION
             setupWindowAnimations();
         }
 
@@ -83,7 +82,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         }
     }
 
-    // TODO: TRANSITION
     private void setupWindowAnimations() {
         Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.activity_fade);
         getWindow().setReenterTransition(fade);
@@ -188,7 +186,7 @@ public class ArticleListActivity extends AppCompatActivity implements
                 public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
-                    // TODO: TRANSITION
+
                     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(ArticleListActivity.this).toBundle());
                 }
             });

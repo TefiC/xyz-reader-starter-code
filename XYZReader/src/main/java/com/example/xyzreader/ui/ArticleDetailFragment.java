@@ -141,7 +141,6 @@ public class ArticleDetailFragment extends Fragment implements
                 public void onScrollChanged() {
                     mScrollY = mScrollView.getScrollY();
                     getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-
                     mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
 
                     updateStatusBar();
@@ -259,6 +258,8 @@ public class ArticleDetailFragment extends Fragment implements
 
             }
 
+            // Truncated original text to improve transition performance due to an issue discussed on Udacity's forums
+            // caused by the text being too long and the code taking too much time to process it
             bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).substring(0, 500).replaceAll("(\r\n|\n)", "<br />")));
 
             ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
@@ -276,7 +277,6 @@ public class ArticleDetailFragment extends Fragment implements
                                 updateStatusBar();
 
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                    // TODO: TRANSITION
                                     ActivityCompat.startPostponedEnterTransition(getActivity());
                                 }
                             }
