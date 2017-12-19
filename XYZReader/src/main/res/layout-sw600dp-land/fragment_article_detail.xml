@@ -15,8 +15,8 @@
         <FrameLayout
             android:id="@+id/photo_container"
             android:layout_width="0dp"
-            android:layout_weight="0.6"
             android:layout_height="match_parent"
+            android:layout_weight="0.8"
             android:background="@color/photo_placeholder">
             <!--suppress AndroidLintContentDescription -->
 
@@ -28,7 +28,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_gravity="top"
                 android:background="@drawable/up_button_protection" />
 
@@ -71,8 +71,8 @@
                         android:orientation="vertical"
                         android:gravity="center"
                         android:textAlignment="center"
-                        android:paddingBottom="@dimen/detail_metabar_vert_padding"
                         android:paddingLeft="@dimen/detail_inner_land_horiz_margin"
+                        android:paddingBottom="@dimen/title_padding_bottom"
                         android:paddingRight="@dimen/detail_inner_land_horiz_margin"
                         android:paddingTop="@dimen/detail_metabar_vert_padding">
 
@@ -106,33 +106,37 @@
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="25dp"
+                        android:layout_marginLeft="@dimen/detail_inner_land_horiz_margin"
+                        android:layout_marginRight="@dimen/detail_inner_land_horiz_margin"
                         android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                         android:paddingBottom="@dimen/detail_body_bottom_margin"
                         android:textColor="#95000000"
+                        android:layout_margin="25dp"
                         android:textAlignment="textStart"
                         android:textColorLink="@color/theme_accent"
                         android:textSize="@dimen/detail_body_text_size" />
 
                 </com.example.xyzreader.ui.MaxWidthLinearLayout>
+
             </LinearLayout>
+
         </com.example.xyzreader.ui.ObservableScrollView>
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/share_fab"
+    <ImageButton android:id="@+id/share_fab"
+        android:stateListAnimator="@animator/fab_state_list_anim"
+        android:background="@drawable/add_fab_background"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:background="@drawable/add_fab_background"
-        android:backgroundTint="@color/colorAccent"
-        android:contentDescription="@string/action_share"
-        android:elevation="@dimen/fab_elevation"
         android:src="@drawable/ic_share"
-        android:stateListAnimator="@animator/fab_state_list_anim"/>
+        android:elevation="@dimen/fab_elevation"
+        android:contentDescription="@string/action_share"
+        android:scaleType="fitCenter"
+        android:padding="16dp"/>
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>

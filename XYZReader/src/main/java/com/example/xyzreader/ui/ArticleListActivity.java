@@ -1,6 +1,5 @@
 package com.example.xyzreader.ui;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
@@ -9,15 +8,17 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
-import android.transition.Slide;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.util.Log;
@@ -29,6 +30,7 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
+import com.example.xyzreader.remote.NetworkUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -43,7 +45,7 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
  * touched, lead to a {@link ArticleDetailActivity} representing item details. On tablets, the
  * activity presents a grid of items as cards.
  */
-public class ArticleListActivity extends ActionBarActivity implements
+public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String TAG = ArticleListActivity.class.toString();
@@ -62,11 +64,12 @@ public class ArticleListActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        // TODO: TRANSITION
-        setupWindowAnimations();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // TODO: TRANSITION
+            setupWindowAnimations();
+        }
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
 
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
@@ -82,9 +85,9 @@ public class ArticleListActivity extends ActionBarActivity implements
 
     // TODO: TRANSITION
     private void setupWindowAnimations() {
-        Transition slide = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide);
-        getWindow().setExitTransition(slide);
-        getWindow().setReturnTransition(slide);
+        Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.activity_fade);
+        getWindow().setReenterTransition(fade);
+        getWindow().setReturnTransition(fade);
     }
 
     private void refresh() {
@@ -96,12 +99,26 @@ public class ArticleListActivity extends ActionBarActivity implements
         super.onStart();
         registerReceiver(mRefreshingReceiver,
                 new IntentFilter(UpdaterService.BROADCAST_ACTION_STATE_CHANGE));
+
+        isInternetConnectionAvailable();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         unregisterReceiver(mRefreshingReceiver);
+    }
+
+    /**
+     * Determines if there is no internet connection in which case
+     * displays a SnackBar warning the user
+     */
+    private void isInternetConnectionAvailable() {
+        if(!NetworkUtils.isNetworkAvailable(this)) {
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.main_content), "There is no Internet Connection", Snackbar.LENGTH_LONG);
+            snackbar.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            snackbar.show();
+        }
     }
 
     private boolean mIsRefreshing = false;

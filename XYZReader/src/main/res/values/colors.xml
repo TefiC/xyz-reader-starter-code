@@ -24,12 +24,12 @@
     <color name="ltgray">#ffe0e0e0</color>
 
     <!--TODO: ADDED THEME COLORS-->
-    <color name="colorPrimary">#8e24aa</color>
-    <color name="colorPrimaryLight">#c158dc</color>
-    <color name="colorPrimaryDark">#5c007a</color>
-    <color name="colorAccent">#8bc34a</color>
-    <color name="colorAccentLight">#bef67a</color>
-    <color name="colorAccentDark">#5a9216</color>
+    <color name="colorPrimary">#00838f</color>
+    <color name="colorPrimaryLight">#4fb3bf</color>
+    <color name="colorPrimaryDark">#005662</color>
+    <color name="colorAccent">#bf360c</color>
+    <color name="colorAccentLight">#f9683a</color>
+    <color name="colorAccentDark">#870000</color>
 
     <color name="articlesTextColor">#676464</color>
 

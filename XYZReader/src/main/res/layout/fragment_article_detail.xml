@@ -1,6 +1,7 @@
 <com.example.xyzreader.ui.DrawInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/draw_insets_frame_layout"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,7 +18,7 @@
             <FrameLayout
                 android:id="@+id/photo_container"
                 android:layout_width="match_parent"
-                android:layout_height="304dp"
+                android:layout_height="@dimen/image_container_height"
                 android:background="@color/photo_placeholder">
                 <!--suppress AndroidLintContentDescription -->
 
@@ -77,7 +78,7 @@
 
                     <TextView
                         android:id="@+id/article_byline"
-                        style="?android:attr/textAppearanceSmall"
+                        style="?android:attr/textAppearanceMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#8fff" />
@@ -107,10 +108,10 @@
         android:backgroundTint="@color/colorAccent"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
+        android:contentDescription="@string/action_share"/>
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
