@@ -113,9 +113,14 @@ public class ArticleListActivity extends AppCompatActivity implements
      */
     private void isInternetConnectionAvailable() {
         if(!NetworkUtils.isNetworkAvailable(this)) {
-            Snackbar snackbar = Snackbar.make(findViewById(R.id.main_content), "There is no Internet Connection", Snackbar.LENGTH_LONG);
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.main_content), "There is no internet connection. Please reconnect.", Snackbar.LENGTH_LONG);
             snackbar.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
             snackbar.show();
+            mRecyclerView.setVisibility(View.GONE);
+            // If the view had been previously removed,
+            // set it to visible if there is internet connection
+        } else if (mRecyclerView.getVisibility() == View.GONE) {
+           mRecyclerView.setVisibility(View.VISIBLE);
         }
     }
 
