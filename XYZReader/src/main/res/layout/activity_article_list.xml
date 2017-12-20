@@ -9,7 +9,7 @@
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/color_primary"
         android:elevation="4dp"
         android:gravity="bottom">
 
@@ -17,7 +17,7 @@
             android:id="@+id/collap_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/colorPrimary"
+            app:contentScrim="@color/color_primary"
             app:expandedTitleGravity="bottom"
             app:expandedTitleTextAppearance="@style/expandedDetailsToolbarText"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">

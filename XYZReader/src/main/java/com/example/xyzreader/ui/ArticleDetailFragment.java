@@ -159,7 +159,7 @@ public class ArticleDetailFragment extends Fragment implements
 
                 Intent intent = Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
-                        .setText("Some sample text")
+                        .setText("I'm love the XYZ Reader App!")
                         .getIntent(), getString(R.string.action_share));
 
                 PackageManager packageManager = getActivity().getPackageManager();
@@ -167,9 +167,8 @@ public class ArticleDetailFragment extends Fragment implements
                 if (intent.resolveActivity(packageManager) != null) {
                     startActivity(intent);
                 } else {
-                   Toast.makeText(getActivity(), "Please install an app that can handle this request", Toast.LENGTH_LONG).show();
+                   Toast.makeText(getActivity(), getString(R.string.no_app_to_handle_request_messsage), Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 

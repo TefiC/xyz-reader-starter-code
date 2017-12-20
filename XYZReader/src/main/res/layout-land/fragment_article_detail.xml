@@ -120,18 +120,7 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/share_fab"
-        android:layout_width="@dimen/fab_size"
-        android:layout_height="@dimen/fab_size"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:background="@drawable/add_fab_background"
-        android:contentDescription="@string/action_share"
-        android:elevation="@dimen/fab_elevation"
-        android:src="@drawable/ic_share"
-        android:stateListAnimator="@animator/fab_state_list_anim"/>
+    <!--Floating Action Button-->
+    <include layout="@layout/details_fab"/>
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>

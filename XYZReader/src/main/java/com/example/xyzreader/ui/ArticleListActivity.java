@@ -113,8 +113,8 @@ public class ArticleListActivity extends AppCompatActivity implements
      */
     private void isInternetConnectionAvailable() {
         if(!NetworkUtils.isNetworkAvailable(this)) {
-            Snackbar snackbar = Snackbar.make(findViewById(R.id.main_content), "There is no internet connection. Please reconnect.", Snackbar.LENGTH_LONG);
-            snackbar.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.main_content), getString(R.string.no_internet_connection_message), Snackbar.LENGTH_LONG);
+            snackbar.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.color_primary));
             snackbar.show();
             mRecyclerView.setVisibility(View.GONE);
             // If the view had been previously removed,
@@ -192,7 +192,11 @@ public class ArticleListActivity extends AppCompatActivity implements
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
 
-                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(ArticleListActivity.this).toBundle());
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(ArticleListActivity.this).toBundle());
+                    } else {
+                        startActivity(intent);
+                    }
                 }
             });
 
