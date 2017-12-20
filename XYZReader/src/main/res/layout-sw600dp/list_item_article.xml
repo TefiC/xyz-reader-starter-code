@@ -33,7 +33,7 @@
 
         <TextView
             android:id="@+id/article_title"
-            style="@style/ArticlesListTitleText"
+            style="@style/articles_list_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -44,7 +44,7 @@
 
         <TextView
             android:id="@+id/article_subtitle"
-            style="@style/ArticlesListAuthorText"
+            style="@style/articles_list_author_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"

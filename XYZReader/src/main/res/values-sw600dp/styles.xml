@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ArticlesListTitleText" parent="TextAppearance.AppCompat.Subhead">
+    <style name="articles_list_title_text" parent="TextAppearance.AppCompat.Subhead">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="ArticlesListAuthorText" parent="TextAppearance.AppCompat.Body1">
+    <style name="articles_list_author_text" parent="TextAppearance.AppCompat.Body1">
         <item name="android:textSize">15sp</item>
     </style>
-
 
 </resources>

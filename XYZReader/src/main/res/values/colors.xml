@@ -30,6 +30,6 @@
     <color name="color_accent_light">#f9683a</color>
     <color name="color_accent_dark">#870000</color>
 
-    <color name="articlesTextColor">#676464</color>
+    <color name="articles_text_color">#676464</color>
 
 </resources>
