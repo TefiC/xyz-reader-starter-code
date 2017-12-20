@@ -16,7 +16,7 @@
 
 ##### Article Details
 
-- Resized article image to full width and a fixed height.
+- Resized article image to full width within its container and a fixed height.
 - Added two scrims on top of the main article image: 
      - One at the top to guarantee that the white up button will always be visible.
      - One at the bottom to create a transition between the view below and the image.
