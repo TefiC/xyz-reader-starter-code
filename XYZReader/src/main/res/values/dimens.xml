@@ -10,7 +10,4 @@
 
     <dimen name="image_container_height">305dp</dimen>
 
-    <!--Floating action button-->
-    <dimen name="fab_padding">8dp</dimen>
-
 </resources>
