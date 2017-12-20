@@ -112,7 +112,7 @@
                         android:textColor="#95000000"
                         android:layout_margin="25dp"
                         android:textAlignment="textStart"
-                        android:textColorLink="@color/theme_accent"
+                        android:textColorLink="@color/color_accent"
                         android:textSize="@dimen/detail_body_text_size" />
 
                 </com.example.xyzreader.ui.MaxWidthLinearLayout>
