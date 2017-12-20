@@ -159,7 +159,7 @@ public class ArticleDetailFragment extends Fragment implements
 
                 Intent intent = Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
-                        .setText("I'm love the XYZ Reader App!")
+                        .setText(getString(R.string.message_to_share))
                         .getIntent(), getString(R.string.action_share));
 
                 PackageManager packageManager = getActivity().getPackageManager();

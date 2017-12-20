@@ -14,5 +14,6 @@
     <!--Messages and Notifications-->
     <string name="no_app_to_handle_request_messsage">Please install an app that can handle this request</string>
     <string name="no_internet_connection_message">There is no internet connection. Please reconnect.</string>
+    <string name="message_to_share">I love the XYZ Reader App!</string>
 
 </resources>
