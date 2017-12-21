@@ -275,7 +275,7 @@ public class ArticleDetailFragment extends Fragment implements
 
                                 updateStatusBar();
 
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && getActivity() != null) {
                                     ActivityCompat.startPostponedEnterTransition(getActivity());
                                 }
                             }

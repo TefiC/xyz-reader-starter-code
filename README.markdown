@@ -1,4 +1,4 @@
-## XYZ Reader - Udacity ADND Project 5 
+## XYZ Reader - Udacity ADND Project 5
 
 ##### Udacity Android Developer Nanodegree
 
@@ -17,15 +17,15 @@
 ##### Article Details
 
 - Resized article image to full width within its container and a fixed height.
-- Added two scrims on top of the main article image: 
+- Added two scrims on top of the main article image:
      - One at the top to guarantee that the white up button will always be visible.
      - One at the bottom to create a transition between the view below and the image.
-- Centered the article's title, author and date for a better presentation
+- Centered the article's title, author and date for a better presentation.
 - Set a default font family for better consistency and UX.
 - The article's body has a max width that will not be exceeded on larger devices.
 - Added a landscape layout that utilizes the blank space on the screen by repositioning the image to the left and the title, author, date and body to the right.
 - Replaced an ImageButton for a FloatingActionButton provided by the Design Support Library with the correct elevation and dimensions that scale according to the device width ("mini" FloatingActionButton for devices with width less than 460dp and "normal" for devices wider that 460dp).
-       - The button's size will change on rotation according to the criteria listed above, following Material Design Guidelines
+       - The size of the button will change on rotation according to the criteria listed above, following Material Design Guidelines.
 - Added an icon from [materialdesignicons.com](https://materialdesignicons.com/) to the Floating Action Button.
 
 ##### Transitions
